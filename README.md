@@ -85,3 +85,11 @@ Plaintext
 
 ```
 
+## Prazo
+
+Projeto desenvolvido dentro do prazo estipulado de 4 dias corridos.
+
+## Autor
+
+Ricardo Wemerson
+GitHub: https://github.com/RickCunha-dev
