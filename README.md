@@ -2,37 +2,27 @@ Kanary Lite – Gerenciador de Tarefas
 
 Desafio Técnico Front-End React (Júnior)
 
-📌 1. Introdução
+Introdução
 
-Este projeto foi desenvolvido como parte do Desafio Técnico Front-End React (Júnior), cujo objetivo é avaliar:
-
-Capacidade de aprendizado
-
-Organização de código
-
-Domínio de conceitos fundamentais do React
-
-Implementação de persistência com LocalStorage
+Este projeto foi desenvolvido como parte do Desafio Técnico Front-End React (Júnior), com o objetivo de demonstrar domínio de conceitos fundamentais do React, organização de código e persistência de dados utilizando LocalStorage.
 
 A aplicação consiste em uma Single Page Application (SPA) para gerenciamento de tarefas diárias.
 
-🎯 2. Escopo do Projeto
+Funcionalidades Implementadas (MVP)
 
-A aplicação permite que o usuário:
+✅ Adicionar tarefa
 
-Adicione novas tarefas
+✅ Listar tarefas
 
-Visualize tarefas cadastradas
+✅ Marcar tarefa como concluída
 
-Marque tarefas como concluídas
+✅ Excluir tarefa
 
-Exclua tarefas
+✅ Persistência de dados no LocalStorage
 
-Mantenha os dados salvos mesmo após atualizar a página (F5)
+✅ Contador de tarefas concluídas
 
-O foco do projeto está na funcionalidade e organização da lógica.
-
-🚀 3. Tecnologias Utilizadas
+Tecnologias Utilizadas
 
 JavaScript (ES6+)
 
@@ -44,51 +34,41 @@ CSS puro
 
 LocalStorage (API do navegador)
 
-🧠 4. Conceitos Técnicos Aplicados
-🔹 useState
+Conceitos Técnicos Aplicados
+useState
 
-Utilizado para:
+Gerenciamento de estado da lista e do input controlado.
 
-Gerenciar a lista de tarefas
+Inicialização com função para evitar leitura repetida do LocalStorage:
 
-Controlar o valor do input
-
-A lista é inicializada com uma função para evitar leituras repetidas do LocalStorage:
-
-const [lista, setLista] = useState(() => {
+```const [lista, setLista] = useState(() => {
   const listaSalva = localStorage.getItem('tarefas')
   return listaSalva ? JSON.parse(listaSalva) : []
-})
-🔹 useEffect
+})``
 
-Responsável por salvar automaticamente as tarefas no navegador sempre que houver alteração no estado:
+useEffect
 
-useEffect(() => {
+Responsável por salvar automaticamente as tarefas no navegador sempre que o estado é alterado:
+
+```useEffect(() => {
   localStorage.setItem('tarefas', JSON.stringify(lista))
-}, [lista])
-🔹 Atualização Imutável de Estado
+}, [lista])```
 
-O projeto evita mutação direta do estado (push()), utilizando o spread operator:
+Atualização Imutável de Estado
 
-setLista([...lista, { texto: textoDigitado, concluida: false }])
-🧩 5. Funcionalidades Implementadas (MVP)
+O projeto evita mutação direta do array (push), criando sempre uma nova referência:
 
-✔ Adicionar Tarefa
-✔ Listar Tarefas
-✔ Marcar como Concluída (checkbox + texto riscado)
-✔ Excluir Tarefa
-✔ Persistência com LocalStorage
+```setLista([...lista, { texto: textoDigitado, concluida: false }])
+Contador de Tarefas
+{lista.filter((item) => item.concluida).length} de {lista.length} tarefas concluídas.```
 
-Contador dinâmico de tarefas concluídas:
-
-{lista.filter((item) => item.concluida).length} de {lista.length} tarefas concluídas.
-📂 6. Estrutura Atual do Projeto
+Estrutura do Projeto
 /src
   App.jsx
   App.css
   main.jsx
 
-Toda a lógica está estruturada dentro do componente principal App, organizada em:
+Toda a lógica está centralizada no componente principal App, organizada em:
 
 Estados
 
@@ -96,25 +76,27 @@ Hooks
 
 Funções de manipulação (adicionar, marcar, excluir)
 
-Renderização da lista com .map()
+Renderização com .map()
 
-🧼 7. Organização e Boas Práticas
+Boas Práticas Aplicadas
 
-Código comentado para demonstrar entendimento dos conceitos
+Uso correto de useState e useEffect
 
-Separação clara entre lógica e renderização
+Estado imutável (sem mutação direta)
+
+Input controlado
 
 Uso de key na renderização da lista
 
-Uso de htmlFor para melhorar acessibilidade
+Uso de htmlFor para acessibilidade
 
-Código identado e limpo
+Código comentado demonstrando entendimento
 
-Sem mutação direta de estado
+Organização clara e identação correta
 
-Uso correto de input controlado
 
-⚙️ 8. Como Rodar o Projeto
+```
+⚙️ Como Rodar o Projeto
 # Clonar o repositório
 git clone https://github.com/RickCunha-dev/kanary-lite.git
 
@@ -126,11 +108,12 @@ npm install
 
 # Rodar o projeto
 npm run dev
+```
 
 A aplicação estará disponível em:
 
 http://localhost:5173
-📅 9. Prazo
+📅 Prazo
 
 Projeto desenvolvido dentro do prazo estipulado de 4 dias corridos.
 
