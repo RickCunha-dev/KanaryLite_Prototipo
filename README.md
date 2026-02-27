@@ -69,7 +69,7 @@ Plaintext
 
 - Performance: Uso de key únicas na renderização de listas com .map().
 
-- Código Limpo: Comentários explicativos e indentação (corrigi aqui para você, no original estava "identação") seguindo padrões de mercado.
+- Código Limpo: Comentários explicativos e indentação seguindo padrões de mercado.
 
 ## Como Rodar o Projeto
 ```
