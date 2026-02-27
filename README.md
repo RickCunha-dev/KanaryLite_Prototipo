@@ -66,7 +66,9 @@ setLista([...lista, { texto: textoDigitado, concluida: false }])
 Contador de Tarefas
 
 ```
-{lista.filter((item) => item.concluida).length} de {lista.length} tarefas concluídas.
+<p>
+   {lista.filter((item) => item.concluida).length} de {lista.length} tarefas concluídas.
+</p>
 ```
 
 Estrutura do Projeto
@@ -102,8 +104,9 @@ Código comentado demonstrando entendimento
 Organização clara e identação correta
 
 
+Como Rodar o Projeto
+
 ```
-⚙️ Como Rodar o Projeto
 # Clonar o repositório
 git clone https://github.com/RickCunha-dev/kanary-lite.git
 
