@@ -7,7 +7,8 @@ import './App.css';
 
 /*
 Esse é o componente React.
-Tudo que estiver dentro dessa função será rederizado na tela.
+Tudo que estiver dentro dessa função será rederizado na tela
+a.
 Cada vez que eu alterar o estado (useState), essa função é executada novamente para atualizar a tela.
 */
 function App() {
