@@ -55,8 +55,8 @@ setLista([...lista, { texto: textoDigitado, concluida: false }]);
 ### Lógica de Derivação de Estado:
 O contador de tarefas não precisa de um novo useState, ele é derivado diretamente da lista original, mantendo a "fonte única da verdade".
 
+## Estrutura do Projeto
 ```
-Estrutura do Projeto
 Plaintext
 /src
  ├── App.jsx   # Lógica principal, Hooks e Gerenciamento de Estado
