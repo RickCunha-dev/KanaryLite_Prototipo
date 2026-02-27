@@ -44,7 +44,8 @@ Inicialização com função para evitar leitura repetida do LocalStorage:
 ```const [lista, setLista] = useState(() => {
   const listaSalva = localStorage.getItem('tarefas')
   return listaSalva ? JSON.parse(listaSalva) : []
-})``
+})
+```
 
 useEffect
 
@@ -58,9 +59,15 @@ Atualização Imutável de Estado
 
 O projeto evita mutação direta do array (push), criando sempre uma nova referência:
 
-```setLista([...lista, { texto: textoDigitado, concluida: false }])
+```
+setLista([...lista, { texto: textoDigitado, concluida: false }])
+```
+
 Contador de Tarefas
-{lista.filter((item) => item.concluida).length} de {lista.length} tarefas concluídas.```
+
+```
+{lista.filter((item) => item.concluida).length} de {lista.length} tarefas concluídas.
+```
 
 Estrutura do Projeto
 /src
